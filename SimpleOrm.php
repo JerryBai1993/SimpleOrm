@@ -105,7 +105,7 @@ class SimpleMysqlModel
     {
         $this->join = $type . " JOIN ";
         foreach ($joins as $val) {
-            $this->join .= " (".$val["table"] . ") AS {$val["alias"]} ON " . $val["conditions"];
+            $this->join .= " (" . $val["table"] . ") AS {$val["alias"]} ON " . $val["conditions"];
         }
         return $this;
     }
@@ -116,10 +116,10 @@ class SimpleMysqlModel
      * @params $where array
      * @return $this
      * */
-    public function Where(array $wheres,$relation = "AND")
+    public function Where(array $wheres, $relation = "AND")
     {
-    	$where = "";
-    	$value = "";
+        $where = "";
+        $value = "";
         foreach ($wheres as &$val) {
             switch ($val["symbol"]) {
                 case "IN":
@@ -191,7 +191,7 @@ class SimpleMysqlModel
     }
 
     /*
-     * insert([col1,col2,...],[[val2,val2...]....])
+     * insert([col1,col2,...],[[val2,val2...]...])
      *
      * @params $cols array
      * @params $values array
